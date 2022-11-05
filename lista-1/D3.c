@@ -1,36 +1,35 @@
 #include <stdio.h>
 
 int main(){
-    long long int quantRest = 0, 
+    int quantRest = 0, 
     codigo = 0, 
     nota = 0, 
-    dias = 0, 
-    maiorNota = 0,
-    menorCodigo = 100000000000,
-    melhores[300]; 
-    while (scanf("%lld", &quantRest) != EOF){
+    maiorNota = 0, 
+    melhorRestaurante = 0, 
+    dia = 0,
+    menorCodigo = 100000000;
+    while (scanf("%d", &quantRest) != EOF) {
         for(int i = 0; i < quantRest; i++){
-            if(scanf("%lld %lld", &codigo, &nota) != EOF){
-                if(nota >= maiorNota){
-                    if(codigo < menorCodigo){
+            if(scanf("%d %d", &codigo, &nota) != EOF){
+                if(nota > maiorNota){
+                    maiorNota = nota;
+                    melhorRestaurante = codigo;
+                    menorCodigo = codigo;
+                } else {
+                    if(nota == maiorNota && codigo < menorCodigo){
+                        maiorNota = nota;
+                        melhorRestaurante = codigo;
                         menorCodigo = codigo;
-                        maiorNota = nota;
-                        melhores[dias] = codigo;   
-                    } else {
-                        maiorNota = nota;
-                        melhores[dias] = codigo;  
                     }
                 }
-            } else{
+            } else {
                 break;
             }
         }
+        printf("Dia %d\n%d\n\n", dia+1, melhorRestaurante);
+        dia++;
         maiorNota = 0;
-        dias++;
-    }
-
-    for(int i = 0; i < dias; i++){
-        printf("Dia %lld \n%lld \n\n", i+1, melhores[i]);
+        menorCodigo = 100000000;
     }
 
     return 0;
