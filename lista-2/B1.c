@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 int faz_conta_direito(int parcelas, char op){
     int soma = 0, numero = 0;
     if(op == '+'){
