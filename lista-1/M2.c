@@ -7,18 +7,14 @@ int main(){
     scanf("%d", &quantLinhas);
     char matriz[quantLinhas][10000];
 
-    /* __fpurge(stdin); */
-
     for(int i = 0; i < quantLinhas; i++){
         scanf(" %[^\n]s", matriz[i]);
-        /* fgets(matriz[i], 10000, stdin); */
     }
 
 
     scanf("%d %d", &linha, &coluna);
     linha--;
     coluna--;
-/*     __fpurge(stdin); */
 
     while (scanf(" %s", &operacoes) != EOF){
         if(operacoes[0] == 'j' && linha + 1 < quantLinhas){
@@ -35,6 +31,5 @@ int main(){
                 printf("%d %d %c \n", linha+1, coluna+1, matriz[linha][coluna]);
             }
     }  
-    
     return 0;
 }
