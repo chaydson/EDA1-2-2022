@@ -9,10 +9,9 @@ int f91(int n){
 
 int main(){
     int n_main = 1;
-    while (scanf("%d", &n_main) != 0){
-        if(n_main == 0) return;
-        printf("f91(%d) = %d \n", n_main ,f91(n_main));
+    while (scanf("%d", &n_main)){
+        if(n_main == 0) return 0;
+        printf("f91(%d) = %d\n", n_main ,f91(n_main));
     }
-    
     return 0;
 }
