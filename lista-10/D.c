@@ -9,14 +9,6 @@ int binary_search(int *v, int low, int high, int key){
     }
     while(low <= high){
         int mid = (low + high)/2;
-/*         if(v[mid] < key){
-            low = mid + 1;
-        } else if(v[mid] > key){
-            high = mid - 1;
-        } else{
-            return mid;
-        } */
-
         if(v[mid] < key){
             low = mid + 1;
         } else if(v[mid] >= key && v[mid - 1] >= key){
